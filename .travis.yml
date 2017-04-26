@@ -1,6 +1,4 @@
-env:
-  global:
-    - OCTOKIT_API_ENDPOINT: "https://github.ibm.com/api/v3"
+
 language:
 - c
 compiler:
@@ -8,15 +6,4 @@ compiler:
 script:
 - make clean
 - make test && make test
-before_deploy:
-- tar cvf SD_test02.tar ./*
-deploy:
-  provider: releases
-  prerelease: true
-  api-key:
-    secure: XLFb2aJjL1O/FgtGeQMB63u+SoBkQqyd+Hm/C7mme7UiSoUZsPLWfEjXJZRvHsEjEaNmn33As/Mg4ksl5U59WQYg4pdz27gN+ddgS6QhfX5SfiGTzsgQeGaL6lNn2TjDKmwoBC3dr1h35IKzskm3o4M8lq4Jd8Whe3pbiKqN98go47eBoTuqzjpl7nzr5TUsnChN7aG7oGWwyZtemLV/cs6ZaGVqnPuBvnXS1XLaKXI1iF5Zd+UOT2Q+r1iAq1lFZ7hNYMqT4CrLPWY9/frZA7lo8vidoNN6QhiUbu1IawU/ZsMAms/J3da5zeBNTW26XrZKQCJM7dnZm8GSk452eFePM76QojewEqwoOCIAzWtdxK7Dw2RNPqSh8/NFn7LZjCULAekWyAeSiBevDkYQ1vp349DK7edmQ/YdAFs15LPaTGL6/leLoG5j8dnMU2QDZ1tzNkQwtEXiSfr7WLplIMr3sLoL/ahi/+hjaMRIYN/mrqVRzbUljX6lcTcPkKmPT4MoZVn+E2hWKd43mysMeVJKOyIRYIxzpt9kkapz0qsMuIkINJ4GyqSXBNuw3vDf5WzDjK4NyI3R6rrPweAuydciWj+ypcgfCu+1m/XORR98ow4CSQo08oYZJRbmCHyz0WZevQ6ZG/6o9LvT1ywCFDDuKyoctukHDaG8b1lZSe4=
-  file:
-  - SD_test02.tar
-  skip_cleanup: true
-  on:
-    tags: true
+

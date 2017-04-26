@@ -1,4 +1,3 @@
-
 language:
 - c
 compiler:
@@ -6,4 +5,13 @@ compiler:
 script:
 - make clean
 - make test && make test
-
+before_deploy:
+- tar cvf SD_test02.tar ./*
+deploy:
+  provider: releases
+  api_key:
+    secure: DXq0ZF3VmPOMOk+7DGSWK3OePOJP6w0VusDZjaGzSyM8+2mXk2DaoTU9xr/gQ6iKY/r7Jw/vltm5GMnmQLOElMF8VGiOVYkAgHmDLd3OEXPXjvV4Z/L8AtNnNfkGjlQ0ouVwMMG8JDt+vYduvUBU+PudeCdbEuLwNAyAgO3ic5B9/cR1FDI1MZbCDpkTLsL2mPItBaRw+RxfvbIShtVV5QMKPEbifQMY7FjGQIPPxdEhn1w6dOvfhYgfQWMkhR8/rhnHL8uAW/rJFX26ACcDNc1Igzo+B0BTyAQl/oTYDOVI2kiyahMJ5ROY2TcLWRHj3Uac9yX9xwIEfe5bfaVOkJJIb2zSnpf3a5R1Rb4KLId4aclsetmF3FVci0YHxo0mGZLva+Q3ufBmExVuzyWtMCighBL7ZA0b50zhC+IxO8bYh/sWctBKj2femIKsekymzUopj66ah4MFT4eLSQwz0TA8kEbFfEZj3RSsyDuuakiyA/Z5lcQBji8qG8RcCfWxMlXvkqdHolZ8Ve9AjJW0i7RQUJdXPUMpAr7sS4g+TMq+cf6mgvuDh3oB/wXkuAmk4qPgEu5ZQE9l86QIYfLswp528BngXKqLusd3JmraFjvpEeinXdHV4QMElvwQK0A2rduNai82v8XFUVtz8t7YXBJwCJ7XMBqQUeIs2jW5Q+U=
+  file: SD_test02.tar
+  on:
+    tags: true
+    repo: Snow-Monkey/SD_test02
